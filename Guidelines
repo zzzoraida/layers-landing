@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Guidelines — Layers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(92, 57, 168, 0.2);
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .logo em {
+      font-style: italic;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #5c39a8;
+    }
+
+    .nav-links a.active {
+      color: #5c39a8;
+      border-bottom: 2px solid #5c39a8;
+      padding-bottom: 0.25rem;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .updated {
+      color: #9a8bc5;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #9a8bc5;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #d0d0d0;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: #d0d0d0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #5c39a8;
+      text-decoration: underline;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    em {
+      color: #9a8bc5;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(15, 15, 30, 0.6);
+      border-top: 1px solid rgba(92, 57, 168, 0.2);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links a {
+      color: #9a8bc5;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #5c39a8;
+    }
+
+    .footer-bottom {
+      color: #6a6a80;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding: 2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      .footer-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><em>layers</em></div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/#why">Why Layers</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Community Guidelines</h1>
+    <p class="updated">Effective: August 2026</p>
+
+    <p>Layers is a place to express the many sides of who you are, discover the many sides of others, and build communities around what matters to you.</p>
+    <p>We believe people should have the freedom to express themselves without feeling confined to one identity, interest, or audience. With that freedom comes a responsibility to treat others with respect and help keep Layers safe.</p>
+    <p>These Community Guidelines apply across Layers, including profiles, Layers, posts, comments, messages, usernames, and other interactions.</p>
+    <p>By using Layers, you agree to follow these Guidelines.</p>
+
+    <h2>1. Be Respectful</h2>
+    <p>Layers should be a place where people can express themselves without being targeted, threatened, or intimidated.</p>
+    <p><strong>Do not:</strong></p>
+    <ul>
+      <li>Bully, harass, or repeatedly target another person.</li>
+      <li>Make credible threats of violence or harm.</li>
+      <li>Encourage others to harass someone.</li>
+      <li>Stalk another user or repeatedly attempt to contact someone who has made it clear they do not want contact.</li>
+      <li>Circumvent another user's decision to block you.</li>
+      <li>Attack or demean people based on protected characteristics such as race, ethnicity, national origin, religion, disability, sex, gender, sexual orientation, or similar protected characteristics.</li>
+      <li>Share someone's private or personally identifying information without permission.</li>
+    </ul>
+    <p><em>Disagreement is allowed. Targeted abuse is not.</em></p>
+
+    <h2>2. Keep Layers Safe</h2>
+    <p>Do not use Layers to promote, organize, encourage, or facilitate serious harm.</p>
+    <p><strong>This includes:</strong></p>
+    <ul>
+      <li>Credible threats or encouragement of violence.</li>
+      <li>Terrorism or violent extremist activity.</li>
+      <li>Content that encourages suicide or self-harm.</li>
+      <li>Graphic violence primarily intended to shock or disturb.</li>
+      <li>Dangerous or illegal activity that could cause serious harm to others.</li>
+      <li>Trafficking, exploitation, or other serious criminal activity.</li>
+    </ul>
+    <p>Context matters. Educational, documentary, awareness, or newsworthy discussions may be treated differently from content that glorifies or encourages harmful behavior.</p>
+
+    <h2>3. Protect Children and Teens</h2>
+    <p>You must be at least 13 years old to create or use a Layers account. In some countries, a higher minimum age may apply.</p>
+    <p>If we reasonably believe an account belongs to someone who does not meet the applicable minimum age, we may restrict or remove the account.</p>
+    <p>Layers has zero tolerance for the sexual exploitation or abuse of minors.</p>
+    <p><strong>Never:</strong></p>
+    <ul>
+      <li>Post, request, share, or distribute child sexual abuse material.</li>
+      <li>Sexualize minors.</li>
+      <li>Groom or attempt to exploit a minor.</li>
+      <li>Solicit sexual images or sexual activity from a minor.</li>
+      <li>Use Layers to facilitate inappropriate sexual contact involving minors.</li>
+    </ul>
+    <p>Content or activity involving suspected child sexual exploitation may be reported to appropriate authorities or organizations when required or permitted by law.</p>
+
+    <h2>4. Sexual & Adult Content</h2>
+    <p>Layers celebrates self-expression, but Layers is not a platform for pornography or sexually explicit content.</p>
+    <p><strong>We do not allow:</strong></p>
+    <ul>
+      <li>Pornographic content.</li>
+      <li>Explicit sexual activity.</li>
+      <li>Visible genitalia presented in a sexual context.</li>
+      <li>Sexual solicitation or offers of sexual services.</li>
+      <li>Content primarily intended for sexual gratification.</li>
+      <li>Non-consensual intimate imagery.</li>
+    </ul>
+    <p>Not every depiction of the human body is sexual. Context matters. Content involving swimwear, fitness, fashion, breastfeeding, health, education, or art, for example, is not automatically prohibited simply because skin is visible.</p>
+    <p>We may remove or restrict content when its primary purpose is sexually explicit or exploitative.</p>
+
+    <h2>5. Respect Privacy & Consent</h2>
+    <p>People deserve control over their personal information and intimate content.</p>
+    <p><strong>Do not:</strong></p>
+    <ul>
+      <li>Share private personal information that could put someone at risk.</li>
+      <li>Share intimate images or videos without the person's consent.</li>
+      <li>Threaten to release someone's intimate or private information.</li>
+      <li>Secretly record or distribute private sexual content.</li>
+      <li>Use another person's identity, images, or information deceptively or maliciously.</li>
+    </ul>
+    <p>If someone blocks you, respect that boundary.</p>
+
+    <h2>6. Be Authentic</h2>
+    <p>Layers is about expressing who you are—not deceiving or exploiting other people.</p>
+    <p><strong>Do not:</strong></p>
+    <ul>
+      <li>Impersonate another person or organization in a misleading way.</li>
+      <li>Operate scams or fraudulent schemes.</li>
+      <li>Send repetitive or deceptive spam.</li>
+      <li>Phish for passwords, financial information, or other sensitive information.</li>
+      <li>Artificially manipulate engagement or platform systems.</li>
+      <li>Create accounts primarily to evade enforcement or another user's block.</li>
+    </ul>
+    <p>Parody, commentary, and fan accounts may be allowed when it is reasonably clear that they are not the person or organization being portrayed.</p>
+
+    <h2>7. Respect What Others Create</h2>
+    <p>Only post content that you have the right to share.</p>
+    <p>Do not knowingly infringe another person's copyright, trademark, or other intellectual-property rights.</p>
+    <p>You remain responsible for the content you upload to Layers.</p>
+    <p>Layers may remove content that infringes intellectual-property rights and may provide processes for reporting intellectual-property concerns as required by law.</p>
+
+    <h2>8. Don't Abuse Layers</h2>
+    <p>Do not interfere with the security, integrity, or normal operation of Layers.</p>
+    <p><strong>This includes:</strong></p>
+    <ul>
+      <li>Attempting to hack or exploit Layers or another user's account.</li>
+      <li>Introducing malicious software or code.</li>
+      <li>Scraping or automating activity in unauthorized ways.</li>
+      <li>Manipulating platform features or engagement.</li>
+      <li>Repeatedly submitting knowingly false or malicious reports.</li>
+      <li>Circumventing suspensions, bans, moderation measures, or safety systems.</li>
+    </ul>
+
+    <h2>9. Reporting</h2>
+    <p>If you see content or behavior that you believe violates these Guidelines, please use Layers' in-app reporting tools.</p>
+    <p>You can also block another user when you no longer want to interact with them.</p>
+    <p>Reports help us understand what's happening across Layers and improve the community as we grow. Submitting a report does not automatically mean that content or an account will be removed. Context, severity, and the nature of the potential violation matter.</p>
+
+    <h2>10. Enforcement</h2>
+    <p>When content or behavior violates these Guidelines, Layers may take action.</p>
+    <p><strong>Depending on the circumstances, that may include:</strong></p>
+    <ul>
+      <li>Removing content.</li>
+      <li>Restricting access to certain features.</li>
+      <li>Issuing a warning.</li>
+      <li>Temporarily suspending an account.</li>
+      <li>Permanently disabling an account.</li>
+      <li>Taking other actions reasonably necessary to protect Layers and its users.</li>
+    </ul>
+    <p>We may consider factors such as severity, context, repeated violations, and potential harm when deciding what action to take.</p>
+    <p>In serious situations, we may preserve or disclose information and contact appropriate authorities when required or permitted by law.</p>
+    <p>If you believe Layers took action on your content or account by mistake, you may request a review through <strong>Help & More → Appeal a Decision</strong> in the app.</p>
+
+    <h2>11. These Guidelines Will Evolve</h2>
+    <p>Layers is growing, and our Community Guidelines may evolve with it.</p>
+    <p>We may update these Guidelines as we learn from our community, introduce new features, respond to emerging risks, or adapt to changes in law or platform requirements.</p>
+    <p>When appropriate, we'll let users know about significant changes.</p>
+
+    <h2>Help Us Shape Layers</h2>
+    <p>Layers is built around a simple idea: people are more than one thing.</p>
+    <p>We want you to be able to express your different interests, communities, passions, and sides of yourself while giving others that same freedom.</p>
+    <p>If you see something that doesn't belong here, report it. If you have feedback about how we can make Layers better, we want to hear it.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions, concerns, or believe something on Layers requires our attention, you can use our in-app reporting and support tools or contact us at:</p>
+    <p><strong><a href="mailto:support@join-layers.com">support@join-layers.com</a></strong></p>
+    <p>Thank you for helping us shape Layers.</p>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/">Home</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Layers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
