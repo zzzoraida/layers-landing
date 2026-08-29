@@ -3,247 +3,579 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layers — Share Your Multifaceted Self</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <title>Layers — Your life isn't one-dimensional.</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    * {
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      font-family: 'DM Sans', sans-serif;
-      color: #1A1A1A;
-      line-height: 1.6;
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: #FFFFFF;
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 100%);
+      color: #FFFFFF;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* Header / Navigation */
     header {
-      padding: 24px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      background: rgba(15, 15, 30, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 20px clamp(16px, 5vw, 40px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #F0EEF8;
+      border-bottom: 1px solid rgba(107, 93, 184, 0.1);
     }
 
-    .logo-text {
+    .logo {
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 24px;
       font-weight: 700;
-      color: #4B3F94;
+      color: #7C6FCD;
       letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
     }
 
     nav {
       display: flex;
-      gap: 32px;
+      gap: 40px;
+      align-items: center;
     }
 
     nav a {
       text-decoration: none;
-      color: #1A1A1A;
+      color: #FFFFFF;
       font-size: 14px;
       font-weight: 500;
       transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #4B3F94;
+      color: #7C6FCD;
+    }
+
+    .waitlist-btn {
+      background: #5c39a8;
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .waitlist-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(92, 57, 168, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
     }
 
     /* Hero Section */
     .hero {
-      display: flex;
-      flex-direction: column;
+      width: 100%;
+      padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 40px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(30px, 5vw, 60px);
       align-items: center;
-      justify-content: center;
-      padding: 80px 20px;
-      text-align: center;
-      background: #FFFFFF;
-      min-height: 70vh;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-logo {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 40px;
-      background: linear-gradient(135deg, #7C6FCD, #6B5DB8);
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 40px rgba(107, 93, 184, 0.15);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .hero-logo svg {
-      width: 80px;
-      height: 80px;
-    }
-
-    .hero-title {
+    .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 48px;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: #4B3F94;
-    }
-
-    .hero-subtitle {
-      font-size: 20px;
-      color: #6B5DB8;
+      font-style: normal;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #FFFFFF;
       margin-bottom: 16px;
-      font-weight: 500;
     }
 
-    .hero-description {
+    .hero-content h1 .italic {
+      font-style: italic;
+      color: #7C6FCD;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      color: #CCCCCC;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .hero-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .value-prop {
+      background: rgba(123, 109, 205, 0.08);
+      border: 1px solid rgba(123, 109, 205, 0.2);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .value-prop h3 {
       font-size: 16px;
-      color: #555555;
-      max-width: 600px;
-      margin-bottom: 48px;
-      line-height: 1.8;
-    }
-
-    .feature-bubble {
-      display: inline-block;
-      background: #F0EEF8;
-      color: #4B3F94;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 12px;
       font-weight: 600;
-      margin: 0 6px 24px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
     }
 
-    .cta-button {
-      background: #4B3F94;
+    .value-prop p {
+      font-size: 14px;
+      color: #AAAAAA;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .hero-cta {
+      background: #5c39a8;
       color: #FFFFFF;
       border: none;
-      padding: 16px 48px;
-      font-size: 16px;
+      padding: 18px 48px;
+      font-size: 18px;
       font-weight: 600;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 8px 24px rgba(75, 63, 148, 0.2);
       text-decoration: none;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-
-    .cta-button:hover {
-      background: #3d3270;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(75, 63, 148, 0.3);
-    }
-
-    .download-links {
-      display: flex;
-      gap: 16px;
-      margin-top: 32px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .download-link {
-      background: #F0EEF8;
-      color: #4B3F94;
-      border: 2px solid #7C6FCD;
-      padding: 12px 24px;
-      font-size: 14px;
-      font-weight: 600;
-      border-radius: 10px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
+      box-shadow: 0 20px 60px rgba(92, 57, 168, 0.3);
     }
 
-    .download-link:hover {
-      background: #E8E4F5;
-      transform: translateY(-1px);
-    }
-
-    /* Features Section */
-    .features {
-      padding: 80px 20px;
-      background-color: #FFFFFF;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .feature-card {
-      text-align: center;
-      padding: 32px;
-      background: #F9F8FC;
-      border-radius: 16px;
-      border: 1px solid #F0EEF8;
-      transition: all 0.3s;
-    }
-
-    .feature-card:hover {
-      box-shadow: 0 12px 32px rgba(107, 93, 184, 0.1);
+    .hero-cta:hover {
       transform: translateY(-4px);
+      box-shadow: 0 24px 72px rgba(92, 57, 168, 0.4);
     }
 
-    .feature-icon {
-      font-size: 40px;
+    .coming-soon {
+      font-size: 14px;
+      color: #5c39a8 !important;
+      font-style: italic;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .hero-device {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 600px;
+      width: 100%;
+    }
+
+    .device-frame {
+      width: 280px;
+      height: 580px;
+      background: #000000;
+      border-radius: 50px;
+      padding: 12px;
+      box-shadow: 0 0 80px rgba(92, 57, 168, 0.4),
+                  0 0 40px rgba(92, 57, 168, 0.3);
+      transform: perspective(1000px) rotateY(-8deg) rotateX(2deg);
+      position: relative;
+      z-index: 10;
+    }
+
+    .device-notch {
+      width: 100%;
+      height: 28px;
+      background: #000000;
+      border-radius: 0 0 24px 24px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    .device-screen {
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      border-radius: 44px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .device-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .glow-orb {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(92, 57, 168, 0.3) 0%, rgba(92, 57, 168, 0.15) 40%, transparent 70%);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+      filter: blur(40px);
+    }
+
+    .annotation {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: #7C6FCD;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: clamp(40px, 6vw, 60px) clamp(16px, 5vw, 40px);
+        gap: clamp(24px, 4vw, 40px);
+      }
+
+      .hero-device {
+        height: 500px;
+      }
+
+      .device-frame {
+        width: 240px;
+        height: 500px;
+      }
+
+      .annotation {
+        display: none;
+      }
+
+      .hero-values {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .device-frame {
+        width: 200px;
+        height: 420px;
+      }
+
+      .hero-values {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .value-prop {
+        padding: 16px;
+      }
+
+      .value-prop h3 {
+        font-size: 14px;
+      }
+
+      .value-prop p {
+        font-size: 12px;
+      }
+
+      .hero-cta {
+        padding: 14px 32px;
+        font-size: 16px;
+      }
+
+      .coming-soon {
+        font-size: 12px;
+      }
+    }
+
+    /* One App Section */
+    .one-app {
+      width: 100%;
+      padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 40px);
+      text-align: center;
+      background: rgba(123, 109, 205, 0.02);
+      border-top: 1px solid rgba(123, 109, 205, 0.1);
+      border-bottom: 1px solid rgba(123, 109, 205, 0.1);
+    }
+
+    .one-app h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
       margin-bottom: 16px;
     }
 
-    .feature-title {
+    .one-app-subtitle {
+      font-size: 20px;
+      color: #7C6FCD;
+      font-style: italic;
+      margin-bottom: 48px;
+    }
+
+    .layer-cards {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .layer-card {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s;
+      background: linear-gradient(135deg, #7C6FCD 0%, #6B5DB8 100%);
+    }
+
+    .layer-card:hover {
+      transform: scale(1.05);
+    }
+
+    .layer-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .layer-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .layer-card-label {
       font-size: 18px;
       font-weight: 600;
-      color: #4B3F94;
+      color: #FFFFFF;
+    }
+
+    .layer-card-content {
+      font-size: 12px;
+      color: #CCCCCC;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 1024px) {
+      .layer-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .one-app h2 {
+        font-size: 36px;
+      }
+
+      .one-app-subtitle {
+        font-size: 18px;
+      }
+    }
+
+
+
+    /* How it Works Section */
+    .how-it-works {
+      width: 100%;
+      padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 40px);
+    }
+
+    .how-it-works h2 {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 60px;
+    }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, rgba(123, 109, 205, 0.2), rgba(107, 93, 184, 0.1));
+      border: 2px solid rgba(123, 109, 205, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-icon svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #FFFFFF;
       margin-bottom: 12px;
     }
 
-    .feature-desc {
+    .step p {
       font-size: 14px;
-      color: #666666;
+      color: #AAAAAA;
       line-height: 1.7;
     }
 
+    @media (max-width: 1024px) {
+      .how-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .how-it-works h2 {
+        font-size: 36px;
+      }
+    }
+
+
+
+    /* You Choose Section */
+    .you-choose {
+      width: 100%;
+      padding: clamp(30px, 6vw, 60px) clamp(16px, 5vw, 40px);
+      text-align: center;
+      background: rgba(123, 109, 205, 0.02);
+      border-top: 1px solid rgba(123, 109, 205, 0.1);
+    }
+
+    .you-choose p:first-child {
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .you-choose p:last-child {
+      font-size: 20px;
+      font-style: italic;
+      color: #7C6FCD;
+    }
+
+
+
     /* Footer */
     footer {
-      background: #F9F8FC;
-      padding: 40px 20px;
-      border-top: 1px solid #F0EEF8;
+      width: 100%;
+      padding: clamp(24px, 5vw, 40px);
+      border-top: 1px solid rgba(123, 109, 205, 0.1);
+      background: rgba(15, 15, 30, 0.5);
     }
 
     .footer-content {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 32px;
+      gap: 20px;
     }
 
-    .footer-section {
-      flex: 1;
-      min-width: 200px;
+    .footer-copy {
+      font-size: 13px;
+      color: #777777;
     }
 
     .footer-links {
@@ -254,50 +586,172 @@
 
     .footer-link {
       text-decoration: none;
-      color: #666666;
+      color: #777777;
       font-size: 13px;
       transition: color 0.2s;
     }
 
     .footer-link:hover {
-      color: #4B3F94;
+      color: #7C6FCD;
     }
 
-    .footer-copy {
-      font-size: 13px;
-      color: #999999;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .hero {
-        padding: 60px 20px;
-      }
-
-      .hero-title {
-        font-size: 36px;
-      }
-
-      .hero-subtitle {
-        font-size: 18px;
-      }
-
-      .download-links {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .download-link {
-        width: 100%;
-        justify-content: center;
+      footer {
+        padding: 24px 20px;
       }
 
       .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
         justify-content: center;
+      }
+    }
+
+    /* Utility */
+    svg text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      fill: #7C6FCD;
+      font-size: 14px;
+    }
+
+    svg line, svg path {
+      stroke: #7C6FCD;
+      stroke-dasharray: 5, 5;
+      stroke-linecap: round;
+    }
+
+    /* Comprehensive mobile breakpoint */
+    @media (max-width: 768px) {
+      header {
+        padding: 16px clamp(12px, 4vw, 20px);
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: clamp(30px, 4vw, 40px) clamp(12px, 4vw, 20px);
+      }
+
+      .hero-content h1 {
+        font-size: clamp(28px, 8vw, 40px);
+      }
+
+      .hero-content p {
+        font-size: clamp(14px, 4vw, 16px);
+      }
+
+      .device-frame {
+        width: 200px;
+        height: 420px;
+      }
+
+      .hero-values {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .value-prop {
+        padding: 12px;
+      }
+
+      .value-prop h3 {
+        font-size: 14px;
+      }
+
+      .value-prop p {
+        font-size: 12px;
+      }
+
+      .hero-cta {
+        padding: 12px 24px;
+        font-size: 14px;
+      }
+
+      .coming-soon {
+        font-size: 12px;
+      }
+
+      .one-app {
+        padding: clamp(30px, 4vw, 40px) clamp(12px, 4vw, 20px);
+      }
+
+      .one-app h2 {
+        font-size: clamp(24px, 6vw, 28px);
+      }
+
+      .one-app-subtitle {
+        font-size: clamp(14px, 4vw, 16px);
+      }
+
+      .layer-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .how-it-works {
+        padding: clamp(30px, 4vw, 40px) clamp(12px, 4vw, 20px);
+      }
+
+      .how-it-works h2 {
+        font-size: clamp(24px, 6vw, 28px);
+        margin-bottom: clamp(24px, 4vw, 40px);
+      }
+
+      .how-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .step-icon {
+        width: 80px;
+        height: 80px;
+      }
+
+      .step-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      .step h3 {
+        font-size: 16px;
+      }
+
+      .step p {
+        font-size: 13px;
+      }
+
+      .you-choose {
+        padding: clamp(30px, 4vw, 40px) clamp(12px, 4vw, 20px);
+      }
+
+      .you-choose p:first-child {
+        font-size: 18px;
+      }
+
+      .you-choose p:last-child {
+        font-size: 14px;
+      }
+
+      footer {
+        padding: clamp(20px, 4vw, 24px);
+      }
+
+      .footer-content {
+        flex-direction: column;
         text-align: center;
       }
 
@@ -311,61 +765,174 @@
 
 <!-- Header -->
 <header>
-  <div class="logo-text">layers</div>
+  <div class="logo">
+    <img src="icon-512.png" alt="Layers logo">
+    layers
+  </div>
   <nav>
-    <a href="#features">Features</a>
-    <a href="#download">Download</a>
-    <a href="#footer">Contact</a>
+    <a href="#why-layers">Why Layers</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://tally.so/r/yPoaB4" class="waitlist-btn" target="_blank">Join the Waitlist</a>
   </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-logo">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Three stacked layers representing the concept -->
-      <rect x="15" y="20" width="70" height="18" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
-      <rect x="15" y="42" width="70" height="18" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
-      <rect x="15" y="64" width="70" height="18" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
-    </svg>
+  <div class="hero-content">
+    <h1>Your life isn't<br><span class="italic">one-dimensional.</span><br>Your social media shouldn't be <span class="italic">either.</span></h1>
+    <p>Layers gives every side of you its own space. Share what you want, with who you want—and let people follow the parts of your world they actually care about.</p>
+
+    <div class="hero-values">
+      <div class="value-prop">
+        <h3>Curated Feed</h3>
+        <p>See more of what matters to you.</p>
+      </div>
+      <div class="value-prop">
+        <h3>Private Layers</h3>
+        <p>Share selectively. Stay authentic.</p>
+      </div>
+      <div class="value-prop">
+        <h3>Real Community</h3>
+        <p>Connect around what you actually have in common.</p>
+      </div>
+    </div>
+
+    <p class="coming-soon">Coming to the App Store in 2026</p>
+    <a href="https://tally.so/r/yPoaB4" class="hero-cta" target="_blank">Join the Layers Waitlist →</a>
   </div>
 
-  <h1 class="hero-title">layers</h1>
-  <p class="hero-subtitle">Share every layer of who you are—with the right people.</p>
-  
-  <p class="hero-description">
-    Organize your life into identity-based layers. Share only what you want with each audience. 
-    Let your followers choose which versions of you they follow.
-  </p>
-
-  <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
-    <div class="feature-bubble">Curated Feed</div>
-    <div class="feature-bubble">Private Layers</div>
-    <div class="feature-bubble">Real Community</div>
-  </div>
-
-  <a href="#download" class="cta-button">Get App</a>
-
-  <div class="download-links" id="download" style="justify-content: center;">
-    <a href="#" class="download-link">
-      <span>📱</span> Coming to App Store
-    </a>
+  <div class="hero-device">
+    <div class="glow-orb"></div>
+    
+    <div class="device-frame">
+      <div class="device-screen">
+        <img src="slideimage2.png" alt="Layers app screenshot">
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer id="footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <p class="footer-copy">© 2026 Layers. All rights reserved.</p>
-    </div>
-    <div class="footer-section">
-      <div class="footer-links">
-        <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
-        <a href="/terms-of-service" class="footer-link">Terms of Service</a>
-        <a href="/guidelines" class="footer-link">Guidelines</a>
-        <a href="mailto:hello@join-layers.com" class="footer-link">Contact</a>
+<!-- You Choose Section -->
+<section class="you-choose" id="why-layers">
+  <p>You choose what to share in each layer.</p>
+  <p>Your followers choose what they follow.</p>
+</section>
+
+<!-- One App Section -->
+<section class="one-app">
+  <h2>One app. Many sides of you.</h2>
+  <p class="one-app-subtitle">Example Layers:</p>
+  
+  <div class="layer-cards">
+    <div class="layer-card">
+      <img src="Work.png" alt="Work layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Work</div>
       </div>
+    </div>
+    <div class="layer-card">
+      <img src="Fitness.png" alt="Fitness layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Fitness</div>
+      </div>
+    </div>
+    <div class="layer-card">
+      <img src="Travel.png" alt="Travel layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Travel</div>
+      </div>
+    </div>
+    <div class="layer-card">
+      <img src="Foodie.png" alt="Foodie layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Foodie</div>
+      </div>
+    </div>
+    <div class="layer-card">
+      <img src="Friends.png" alt="Close Friends layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Close Friends</div>
+      </div>
+    </div>
+    <div class="layer-card">
+      <img src="Creative.png" alt="Creative layer">
+      <div class="layer-card-overlay">
+        <div class="layer-card-label">Creative</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works" id="how-it-works">
+  <h2>How Layers works</h2>
+  
+  <div class="how-steps">
+    <div class="step">
+      <div class="step-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="60" height="50" rx="4" stroke="#7C6FCD" stroke-width="2"/>
+          <circle cx="50" cy="45" r="6" fill="#7C6FCD"/>
+          <rect x="35" y="60" width="30" height="3" rx="1.5" fill="#7C6FCD"/>
+        </svg>
+      </div>
+      <h3>Create your layers</h3>
+      <p>Build layers for the different parts of your life.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="25" width="60" height="55" rx="4" stroke="#7C6FCD" stroke-width="2"/>
+          <circle cx="50" cy="40" r="5" fill="#7C6FCD"/>
+          <path d="M 30 55 L 70 55 M 30 65 L 70 65 M 30 75 L 60 75" stroke="#7C6FCD" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Share what you want</h3>
+      <p>Post to specific layers—only your chosen audience sees it.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="45" r="15" stroke="#7C6FCD" stroke-width="2"/>
+          <circle cx="60" cy="50" r="15" stroke="#7C6FCD" stroke-width="2"/>
+          <circle cx="50" cy="35" r="15" stroke="#7C6FCD" stroke-width="2"/>
+          <circle cx="50" cy="55" r="8" fill="#7C6FCD" opacity="0.3"/>
+        </svg>
+      </div>
+      <h3>Followers pick & follow</h3>
+      <p>They follow the layers they care about.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 50 20 L 70 40 L 60 40 L 60 70 L 40 70 L 40 40 L 30 40 Z" stroke="#7C6FCD" stroke-width="2" fill="#7C6FCD" opacity="0.1"/>
+          <circle cx="50" cy="50" r="25" stroke="#7C6FCD" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <h3>A better feed for everyone</h3>
+      <p>Less noise. More of what matters.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section (anchor placeholder) -->
+<section id="faq" style="padding: 40px; text-align: center; opacity: 0.7;">
+  <p style="font-size: 18px; color: #AAAAAA;">FAQ section coming soon</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <p class="footer-copy">© 2026 Layers. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+      <a href="/terms-of-service" class="footer-link">Terms of Service</a>
+      <a href="/guidelines" class="footer-link">Guidelines</a>
+      <a href="mailto:hello@join-layers.com" class="footer-link">Contact</a>
     </div>
   </div>
 </footer>
